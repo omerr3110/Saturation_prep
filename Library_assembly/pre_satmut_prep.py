@@ -1,0 +1,23 @@
+import pandas as pd
+#%%
+refseq_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_refseq_2000_135.csv",index_col=0)
+phenotype_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_phenotype.csv",index_col=0)
+HARs_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_HARs.csv",index_col=0)
+HAQERs_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_haqers_750_135.csv",index_col=0)
+UC_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_uc.csv",index_col=0)
+MH_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_carly.csv",index_col=0)
+random_active_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_random_active.csv",index_col=0)
+disease_df=pd.read_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_disease.csv",index_col=0)
+#%%
+full_df=pd.concat([disease_df,refseq_df,phenotype_df,HARs_df,HAQERs_df,UC_df,MH_df,random_active_df],ignore_index=True)
+#%%
+full_df.to_csv(r"\\data.wexac.weizmann.ac.il\davidgo\omerro\SaturationMutagenesis\main\Library_assembly\output"
+                      r"\pre_satmut_all_regions.csv")
